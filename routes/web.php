@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('api')->group(function(){
+    // get contact
+    Route::get('getContacts', 'App\Http\Controllers\ContactController@getContact');
+});
